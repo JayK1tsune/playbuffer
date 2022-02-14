@@ -24,7 +24,9 @@ void Player::HandlePlayerInput()
 
 	if (Play::KeyDown(VK_LEFT))
 	{
+		
 		obj_player.acceleration = { -1,0 };
+		
 
 	}
 	else if (Play::KeyDown(VK_RIGHT))
