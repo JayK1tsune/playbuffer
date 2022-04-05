@@ -3484,6 +3484,7 @@ namespace Play
 	Colour cOrange{ 100.0f, 50.0f, 0.0f };
 	Colour cWhite{ 100.0f, 100.0f, 100.0f };
 	Colour cGrey{ 50.0f, 50.0f, 50.0f };
+	Colour cTest{ 25.0f, 25.0f, 25.0f };
 
 	//**************************************************************************************************
 	// Manager creation and deletion

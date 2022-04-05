@@ -1,24 +1,48 @@
-#define PLAY_IMPLEMENTATION
-#define PLAY_USING_GAMEOBJECT_MANAGER
-#include "Play.h"
 
-int DISPLAY_WIDTH = 640;
-int DISPLAY_HEIGHT = 360;
-int DISPLAY_SCALE = 2;
+#include "Player.h"
+
+int DISPLAY_WIDTH = 1280;
+int DISPLAY_HEIGHT = 720;
+int DISPLAY_SCALE = 1;
+
+Player player = Player();
+
+struct GameState
+{
+	float timer = 0;
+	int spriteID = 0;
+};
+
+GameState gameState;
 
 // The entry point for a PlayBuffer program
+//:: = scope 
 void MainGameEntry( PLAY_IGNORE_COMMAND_LINE )
 {
 	Play::CreateManager( DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SCALE );
+
+	player.InitPlayer("paddle", DISPLAY_WIDTH * 0.5f, DISPLAY_HEIGHT * 0.75);
 }
 
 // Called by PlayBuffer every frame (60 times a second!)
 bool MainGameUpdate( float elapsedTime )
 {
+<<<<<<< HEAD
 	Play::ClearDrawingBuffer( Play::cOrange );
-	Play::DrawDebugText( { DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2 }, "Hello World!" );
+	Play::DrawDebugText( { DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2 }, "Frogger!" );
+=======
+	Play::ClearDrawingBuffer( Play::cBlack);
+
+	//Play::DrawDebugText({ DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2 },
+	//	Play::GetSpriteName(gameState.spriteID),
+	//	Play::cWhite);
+
+	player.UpdatePlayer();
+
+>>>>>>> fedd651f216a26e0fd1718cfcbb9e4ec12a6311d
 	Play::PresentDrawingBuffer();
 	return Play::KeyDown( VK_ESCAPE );
+	
 }
 
 // Gets called once when the player quits the game 
