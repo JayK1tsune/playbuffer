@@ -18,6 +18,7 @@ void MainGameEntry( PLAY_IGNORE_COMMAND_LINE )
 {
 	Play::CreateManager( DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SCALE );
 	Play::CentreAllSpriteOrigins();
+	//Play::LoadBackground("E:\\UNI\\playbuffer\\HelloWorld\\Data\\Backgrounds\\Frogger.png");
 }
 
 // Called by PlayBuffer every frame (60 times a second!)
